@@ -1,0 +1,24 @@
+<div class="container ">
+    <h1 class="mb-5">Nuevo Proyecto</h1>
+
+    <%= form_with(model: @project, local: true) do |form|%>
+
+    <%= form.label :name %> 
+    <%= form.text_field :name, class: "form-control" %>
+    <br>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+    <br>
+    <%= form.label :starts_on %>
+    <%= form.date_field :starts_on, class: "form-control" %>
+    <br>
+    <%= form.label :ends_on %>
+    <%= form.date_field :ends_on, class: "form-control" %>
+    <br>
+    <%= form.label :state %>
+    <%= form.select :state, ["Proposal", "In Progress", "Finished"], class: 'form-control form-control-lg'  %>
+    <br>
+    <%= form.submit :Submit, class: 'btn btn-dark mt-4' %>
+
+    <% end %>
+</div>

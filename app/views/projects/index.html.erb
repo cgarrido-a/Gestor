@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Proyectos</h1>
+
+    <form method="get" class="mb-5 mt-3">
+        <%= select_tag :state, options_for_select(["All", "Proposal", "In Progress", "Finished"], @selected_state) %>
+        <button type="submit" class="btn btn-dark ">Search</button>
+    </form>
+</div>
+
+ <div class="container">
+    <table class="table">
+        <thead class="color_thead">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Status</th>
+            <th scope="col">Fecha de Inicio</th>
+            <th scope="col">Fecha de Término</th>
+        </tr>
+        </thead>
+
+        <% @projects.each do |project| %>
+        <tbody>
+        <tr>
+                <td><%= project.name %></td>
+                <td><%= project.description %></td>
+                <td><%= project.state %></td>
+                <td><%= project.starts_on %></td>
+                <td><%= project.ends_on %></td>
+            </tr>
+    
+        </tbody>
+        <% end %>
+    </table>
+
+</div>
+
